@@ -1,8 +1,8 @@
 {
   "name": "VMVideoPlayer",
   "version": "0.1.0",
-  "summary": "A short description of VMVideoPlayer.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "A pods libary of VMVideoPlayer, used for movie player",
+  "description": "A pods libary of VMVideoPlayer, used for movie player, which is usefull for create app",
   "homepage": "https://github.com/CoderSQ/VMVideoPlayer",
   "license": {
     "type": "MIT",
@@ -16,7 +16,24 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "13.0"
   },
-  "source_files": "VMVideoPlayer/Classes/**/*"
+  "source_files": "VMVideoPlayer/Classes/**/*",
+  "public_header_files": "VMVideoPlayer/Classes/**/*.h",
+  "static_framework": true,
+  "dependencies": {
+    "AFNetworking": [],
+    "SDWebImage": [],
+    "SDWebImageWebPCoder": [],
+    "Masonry": [],
+    "YYModel": [],
+    "GKNavigationBar": [],
+    "GKVideoScrollView": [],
+    "GKPageSmoothView": [],
+    "GKSliderView": [],
+    "GKPopupController": [],
+    "MJRefresh": [],
+    "JXCategoryView": [],
+    "ZFPlayer/AVPlayer": []
+  }
 }

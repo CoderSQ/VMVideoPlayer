@@ -176,10 +176,34 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/VMVideoPlayer/VMVideoPlayer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKNavigationBar/GKNavigationBar.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKPageSmoothView/GKPageSmoothView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKPopupController/GKPopupController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKSliderView/GKSliderView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKVideoScrollView/GKVideoScrollView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/VMVideoPlayer/VMVideoPlayer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKNavigationBar/GKNavigationBar.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKPageSmoothView/GKPageSmoothView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKPopupController/GKPopupController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKSliderView/GKSliderView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GKVideoScrollView/GKVideoScrollView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

@@ -39,6 +39,8 @@ Pod::Spec.new do |s|
   s.public_header_files = 'VMVideoPlayer/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  # 在 VMVideoPlayer.podspec 中添加
+  s.static_framework = true
   
   s.dependency 'AFNetworking'
   s.dependency 'SDWebImage'

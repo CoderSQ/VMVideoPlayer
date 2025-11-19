@@ -8,6 +8,7 @@
 
 #import "UITabBar+GKCategory.h"
 #import "NSMethodSignature+GKCategory.h"
+#import <objc/runtime.h>
 
 CG_INLINE BOOL
 HasOverrideSuperclassMethod(Class targetClass, SEL targetSelector) {
