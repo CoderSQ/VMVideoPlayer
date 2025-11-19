@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'VMVideoPlayer_Example' do
+  pod 'VMVideoPlayer', :path => '../'
+
+  target 'VMVideoPlayer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
