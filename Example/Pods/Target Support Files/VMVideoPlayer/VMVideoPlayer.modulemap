@@ -1,0 +1,6 @@
+framework module VMVideoPlayer {
+  umbrella header "VMVideoPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

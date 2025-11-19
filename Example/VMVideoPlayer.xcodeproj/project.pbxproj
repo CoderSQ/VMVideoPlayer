@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		074DD5240A484A725E6936C2 /* VMVideoPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = VMVideoPlayer.podspec; path = ../VMVideoPlayer.podspec; sourceTree = "<group>"; };
-		39120714534A03FAC070401F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		074DD5240A484A725E6936C2 /* VMVideoPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VMVideoPlayer.podspec; path = ../VMVideoPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		39120714534A03FAC070401F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4CA012C2CE8B493A7F6BA400 /* Pods_VMVideoPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VMVideoPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513188E2BD4E6F13E298C3D0 /* Pods-VMVideoPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMVideoPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-VMVideoPlayer_Example/Pods-VMVideoPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* VMVideoPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMVideoPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +63,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84D04ABC66F37D885AE83791 /* Pods-VMVideoPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMVideoPlayer_Tests.release.xcconfig"; path = "Target Support Files/Pods-VMVideoPlayer_Tests/Pods-VMVideoPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B4B15982DCA44FA4C81F6C9A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B4B15982DCA44FA4C81F6C9A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		BBEC828DB6A8977402D61B71 /* Pods_VMVideoPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VMVideoPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD6E38B08DA4DDB018D2FEC /* Pods-VMVideoPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMVideoPlayer_Tests.debug.xcconfig"; path = "Target Support Files/Pods-VMVideoPlayer_Tests/Pods-VMVideoPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F2C161344481A27BF2D529F7 /* Pods-VMVideoPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMVideoPlayer_Example.debug.xcconfig"; path = "Target Support Files/Pods-VMVideoPlayer_Example/Pods-VMVideoPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,7 +193,6 @@
 				BFD6E38B08DA4DDB018D2FEC /* Pods-VMVideoPlayer_Tests.debug.xcconfig */,
 				84D04ABC66F37D885AE83791 /* Pods-VMVideoPlayer_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

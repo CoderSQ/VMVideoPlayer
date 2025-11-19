@@ -1,0 +1,16 @@
+PODS:
+  - VMVideoPlayer (0.1.0)
+
+DEPENDENCIES:
+  - VMVideoPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  VMVideoPlayer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  VMVideoPlayer: d8689b8ef3f70a6c88487997075a6a7fbe280687
+
+PODFILE CHECKSUM: 10f5ccc55efeb619dc3607d5b0f4e92473429514
+
+COCOAPODS: 1.16.2

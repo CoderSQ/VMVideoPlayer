@@ -1,0 +1,6 @@
+framework module Pods_VMVideoPlayer_Tests {
+  umbrella header "Pods-VMVideoPlayer_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

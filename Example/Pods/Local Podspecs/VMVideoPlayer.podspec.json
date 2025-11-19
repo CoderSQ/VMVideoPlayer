@@ -1,0 +1,22 @@
+{
+  "name": "VMVideoPlayer",
+  "version": "0.1.0",
+  "summary": "A short description of VMVideoPlayer.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/CoderSQ/VMVideoPlayer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "CoderSQ": "steven_shuang@126.com"
+  },
+  "source": {
+    "git": "https://github.com/CoderSQ/VMVideoPlayer.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "VMVideoPlayer/Classes/**/*"
+}
