@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.author           = { 'CoderSQ' => 'steven_shuang@126.com' }
   s.source           = { :git => 'https://github.com/CoderSQ/VMVideoPlayer.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  s.platform = :ios, '11.0'  # 或更高版本
+  s.platform = :ios, '13.0'  # 或更高版本
 
   s.ios.deployment_target = '13.0'
 
