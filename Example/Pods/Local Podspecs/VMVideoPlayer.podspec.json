@@ -16,7 +16,7 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "13.0"
+    "ios": "11.0"
   },
   "source_files": [
     "VMVideoPlayer/Classes/**/*",
@@ -39,5 +39,10 @@
     "MJRefresh": [],
     "JXCategoryView": [],
     "ZFPlayer/AVPlayer": []
+  },
+  "resource_bundles": {
+    "VMVideoPlayerAssets": [
+      "Resources/Assets.xcassets/**/*"
+    ]
   }
 }

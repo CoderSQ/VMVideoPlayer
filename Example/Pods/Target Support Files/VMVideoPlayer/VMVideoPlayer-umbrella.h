@@ -19,6 +19,7 @@
 #import "NSMethodSignature+GKCategory.h"
 #import "NSString+GKCategory.h"
 #import "UIButton+GKCategory.h"
+#import "UIImage+BundleImage.h"
 #import "UITabBar+GKCategory.h"
 #import "GKDYTools.h"
 #import "GKDoubleLikeView.h"

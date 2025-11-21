@@ -208,6 +208,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				1AA6D43F0E4B410E0876F257 /* [CP] Embed Pods Frameworks */,
+				6E6F41B1E173B69307C64D62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -335,6 +336,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VMVideoPlayer_Example/Pods-VMVideoPlayer_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E6F41B1E173B69307C64D62 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VMVideoPlayer_Example/Pods-VMVideoPlayer_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/VMVideoPlayer/VMVideoPlayerAssets.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VMVideoPlayerAssets.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VMVideoPlayer_Example/Pods-VMVideoPlayer_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9E7FA7B210998290EF9E0CC9 /* [CP] Check Pods Manifest.lock */ = {
@@ -521,6 +540,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VMVideoPlayer/VMVideoPlayer-Prefix.pch";
 				INFOPLIST_FILE = "VMVideoPlayer/VMVideoPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -537,6 +557,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VMVideoPlayer/VMVideoPlayer-Prefix.pch";
 				INFOPLIST_FILE = "VMVideoPlayer/VMVideoPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

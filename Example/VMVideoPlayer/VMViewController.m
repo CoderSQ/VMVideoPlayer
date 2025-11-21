@@ -7,6 +7,7 @@
 //
 
 #import "VMViewController.h"
+#import <VMVideoPlayer/VMVideoPlayer-umbrella.h>
 
 @interface VMViewController ()
 
@@ -18,6 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [UIImage imageNamedBundle: @"WechatIMG240"];
 }
 
 - (void)didReceiveMemoryWarning

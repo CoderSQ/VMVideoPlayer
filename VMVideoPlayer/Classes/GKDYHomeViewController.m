@@ -63,7 +63,9 @@
     [self.view addSubview:self.titleView];
     
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+//        make.edges.equalTo(self.view);
+        make.top.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-TABBAR_HEIGHT);
     }];
     
     [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {

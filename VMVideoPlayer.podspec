@@ -27,9 +27,9 @@ Pod::Spec.new do |s|
   s.author           = { 'CoderSQ' => 'steven_shuang@126.com' }
   s.source           = { :git => 'https://github.com/CoderSQ/VMVideoPlayer.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  s.platform = :ios, '13.0'  # 或更高版本
+#  s.platform = :ios, '13.0'  # 或更高版本
 
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'VMVideoPlayer/Classes/**/*', 'VMVideoPlayer/Classes/PrefixHeader.pch'
   
@@ -39,6 +39,7 @@ Pod::Spec.new do |s|
 
   s.public_header_files = 'VMVideoPlayer/Classes/**/*.h'
   s.prefix_header_file = 'VMVideoPlayer/Classes/PrefixHeader.pch'
+#  s.resources = "Resources/Assets.xcassets"
 
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
@@ -59,4 +60,10 @@ Pod::Spec.new do |s|
   s.dependency 'JXCategoryView'
   s.dependency 'ZFPlayer/AVPlayer'
   
+  s.resource_bundles = {
+    "VMVideoPlayerAssets" => [
+        "Resources/VMVideoPlayerAssets.xcassets/**/*.{imageset,colorset}"
+    ]
+  }
+
 end
