@@ -18,7 +18,10 @@
   "platforms": {
     "ios": "13.0"
   },
-  "source_files": "VMVideoPlayer/Classes/**/*",
+  "source_files": [
+    "VMVideoPlayer/Classes/**/*",
+    "VMVideoPlayer/Classes/PrefixHeader.pch"
+  ],
   "public_header_files": "VMVideoPlayer/Classes/**/*.h",
   "prefix_header_file": "VMVideoPlayer/Classes/PrefixHeader.pch",
   "static_framework": true,

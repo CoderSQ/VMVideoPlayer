@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'VMVideoPlayer/Classes/**/*'
+  s.source_files = 'VMVideoPlayer/Classes/**/*', 'VMVideoPlayer/Classes/PrefixHeader.pch'
   
   # s.resource_bundles = {
   #   'VMVideoPlayer' => ['VMVideoPlayer/Assets/*.png']
