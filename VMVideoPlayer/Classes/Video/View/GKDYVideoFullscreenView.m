@@ -8,6 +8,7 @@
 
 #import "GKDYVideoFullscreenView.h"
 #import "GKDoubleLikeView.h"
+#import <Masonry/Masonry.h>
 
 @interface GKDYVideoFullscreenView()
 

@@ -9,6 +9,7 @@
 #import "GKDYVideoLandscapeCell.h"
 #import "GKDYVideoMaskView.h"
 #import "UIButton+GKCategory.h"
+#import <Masonry/Masonry.h>
 
 @interface GKDYVideoLandscapeCell()
 

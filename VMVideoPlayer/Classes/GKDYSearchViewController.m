@@ -7,6 +7,7 @@
 //
 
 #import "GKDYSearchViewController.h"
+#import <GKNavigationBar/GKNavigationBar.h>
 
 @interface GKDYSearchViewController ()
 

@@ -7,6 +7,8 @@
 //
 
 #import "GKDYVideoCell.h"
+#import <Masonry/Masonry.h>
+#import <SDWebImage/SDWebImage.h>
 
 @interface GKDYVideoCell()
 

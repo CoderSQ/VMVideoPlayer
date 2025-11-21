@@ -12,7 +12,9 @@
 #import "GKDYVideoLandscapeCell.h"
 #import "GKScaleTransition.h"
 #import "GKDYCommentView.h"
-#import "GKDYUserViewController.h"
+#import <GKNavigationBar/GKNavigationBar.h>
+#import <Masonry/Masonry.h>
+//#import "GKDYUserViewController.h"
 
 @interface GKDYPlayerNavigationController()
 
@@ -112,9 +114,9 @@
         portraitCell.manager = self.manager;
     }else {
         GKDYVideoLandscapeCell *landscapeCell = (GKDYVideoLandscapeCell *)cell;
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         landscapeCell.backClickBlock = ^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             [self.manager rotate];
         };
     }
@@ -147,9 +149,9 @@
 }
 
 - (void)cellDidClickIcon:(GKDYVideoModel *)model {
-    GKDYUserViewController *userVC = [[GKDYUserViewController alloc] init];
-    userVC.model = model;
-    [self.navigationController pushViewController:userVC animated:YES];
+//    GKDYUserViewController *userVC = [[GKDYUserViewController alloc] init];
+//    userVC.model = model;
+//    [self.navigationController pushViewController:userVC animated:YES];
 }
 
 - (void)videoCell:(GKDYVideoPortraitCell *)cell didClickComment:(GKDYVideoModel *)model {

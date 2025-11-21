@@ -7,6 +7,7 @@
 //
 
 #import "GKDYVideoPortraitCell.h"
+#import <Masonry/Masonry.h>
 
 @interface GKDYVideoPortraitCell()<GKDYVideoPortraitViewDelegate, UIScrollViewDelegate>
 

@@ -8,6 +8,7 @@
 
 #import "GKDYVideoSlider.h"
 #import <Masonry/Masonry.h>
+#import "GKDYTools.h"
 
 @interface GKDYVideoSlider()<GKSliderViewPreviewDelegate>
 
@@ -115,9 +116,9 @@
     NSTimeInterval time = self.totalTime * value;
     
     self.isSeeking = YES;
-    @weakify(self);
+    __weak typeof(self) weakSelf = self; // 手动创建弱引用
     [self.player seekToTime:time completionHandler:^(BOOL finished) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         self.isSeeking = NO;
     }];
 }

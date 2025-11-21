@@ -7,6 +7,7 @@
 //
 
 #import "GKNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation GKNetworking
 

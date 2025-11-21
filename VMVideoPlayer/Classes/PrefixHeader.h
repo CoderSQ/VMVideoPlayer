@@ -6,8 +6,8 @@
 //  Copyright © 2018 QuintGao. All rights reserved.
 //
 
-#ifndef PrefixHeader_pch
-#define PrefixHeader_pch
+//#ifndef PrefixHeader_pch
+//#define PrefixHeader_pch
 
 #import <GKNavigationBar/GKNavigationBar.h>
 #import <AFNetworking/AFNetworking.h>
@@ -83,4 +83,4 @@
     #endif
 #endif
 
-#endif /* PrefixHeader_pch */
+//#endif /* PrefixHeader_pch */

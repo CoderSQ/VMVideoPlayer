@@ -15,6 +15,7 @@
 #import <ZFPlayer/ZFReachabilityManager.h>
 #import "GKDYVideoPreviewView.h"
 #import "GKDYTools.h"
+#import <Masonry/Masonry.h>
 
 @interface GKDYVideoLandscapeView()<GKSliderViewDelegate, GKSliderViewPreviewDelegate>
 
@@ -204,9 +205,9 @@
     [self cancelAutoHidden];
     
     CGPoint point = [gesture locationInView:gesture.view];
-    @weakify(self);
+    __weak typeof(self) weakSelf = self; // 手动创建弱引用
     [self.likeView createAnimationWithPoint:point view:gesture.view completion:^{
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         [self performSelector:@selector(hideContainerView) withObject:nil afterDelay:5.0f];
     }];
     self.model.isLike = YES;

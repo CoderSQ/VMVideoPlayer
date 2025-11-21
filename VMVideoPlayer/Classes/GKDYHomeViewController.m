@@ -9,11 +9,13 @@
 #import "GKDYHomeViewController.h"
 #import "GKDYSearchViewController.h"
 #import "GKDYPlayerViewController.h"
-#import "GKDYUserViewController.h"
-#import "GKDYMainViewController.h"
+//#import "GKDYUserViewController.h"
+//#import "GKDYMainViewController.h"
 #import "GKDYScrollView.h"
 #import "GKDYTitleView.h"
 #import "GKBallLoadingView.h"
+#import <GKNavigationBar/GKNavigationBar.h>
+#import <Masonry/Masonry.h>
 
 @interface GKDYHomeViewController()<UIScrollViewDelegate, GKViewControllerPushDelegate, JXCategoryViewDelegate, JXCategoryListContainerViewDelegate, GKDYPlayerViewControllerDelegate>
 
@@ -88,9 +90,9 @@
 }
 
 - (void)requestCurrentList {
-    @weakify(self);
+    __weak typeof(self) weakSelf = self; // 手动创建弱引用
     [self.playerVC refreshData:^{
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         [self.titleView loadingEnd];
     }];
 }
@@ -101,9 +103,9 @@
 
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
-    GKDYUserViewController *userVC = [GKDYUserViewController new];
-    userVC.model = self.playerVC.model;
-    [self.navigationController pushViewController:userVC animated:YES];
+//    GKDYUserViewController *userVC = [GKDYUserViewController new];
+//    userVC.model = self.playerVC.model;
+//    [self.navigationController pushViewController:userVC animated:YES];
 }
 
 #pragma mark - JXCategoryViewDelegate
@@ -161,9 +163,9 @@
         _titleView.categoryView.delegate = self;
         _titleView.categoryView.listContainer = self.containerView;
         
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         _titleView.loadingBlock = ^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             [self requestCurrentList];
         };
     }

@@ -7,6 +7,7 @@
 //
 
 #import "GKBallLoadingView.h"
+#import "PrefixHeader.h"
 
 #define kBallWidth      12.0f
 #define kBallSpeed      0.7f

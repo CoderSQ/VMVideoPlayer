@@ -13,6 +13,8 @@
 #import <MJRefresh/MJRefresh.h>
 #import "GKPopupController.h"
 #import "GKDYCommentControlView.h"
+#import <Masonry/Masonry.h>
+#import "PrefixHeader.h"
 
 @interface GKDYCommentView()<UITableViewDataSource, UITableViewDelegate, GKPopupProtocol>
 
@@ -92,9 +94,9 @@
         
         self.pn = 1;
         
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             self.pn ++;
             [self requestData];
         }];
@@ -172,9 +174,9 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSString *url = [NSString stringWithFormat:@"https://haokan.baidu.com/haokan/ui-web/v2/comment/get?rn=10&url_key=%@&pn=%zd", self.model.video_id, self.pn];
     
-    @weakify(self);
+    __weak typeof(self) weakSelf = self; // 手动创建弱引用
     [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         if (self.loadingView) {
             [self.loadingView stopLoading];
             [self.loadingView removeFromSuperview];
@@ -195,7 +197,7 @@
             [self.tableView.mj_footer endRefreshing];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         self.model.isRequest = NO;
         if (self.loadingView) {
             [self.loadingView stopLoading];

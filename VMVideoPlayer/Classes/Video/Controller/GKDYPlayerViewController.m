@@ -6,8 +6,11 @@
 //  Copyright © 2018 QuintGao. All rights reserved.
 //
 
+#import "AFNetworking/AFNetworking.h"
+#import <MJRefresh/MJRefresh.h>
+#import <Masonry/Masonry.h>
 #import "GKDYPlayerViewController.h"
-#import "GKDYUserViewController.h"
+//#import "GKDYUserViewController.h"
 #import "GKDYCommentView.h"
 #import "GKDYCommentControlView.h"
 #import "GKBallLoadingView.h"
@@ -17,6 +20,8 @@
 #import "GKDYPlayerManager.h"
 #import "GKDYVideoPortraitCell.h"
 #import "GKDYVideoLandscapeCell.h"
+#import <YYModel/YYModel.h>
+
 
 @interface GKDYPlayerViewController ()<GKDYPlayerManagerDelegate, GKDYCommentViewDelegate>
 
@@ -57,9 +62,9 @@
 }
 
 - (void)setupRefresh {
-    @weakify(self);
+    __weak typeof(self) weakSelf = self; // 手动创建弱引用
     self.manager.scrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         [self requestMore];
     }];
 }
@@ -95,9 +100,9 @@
 //    NSString *url = [NSString stringWithFormat:@"https://haokan.baidu.com/haokan/ui-web/video/feed?tab=%@&act=pcFeed&pd=pc&num=%d", self.tab, 5];
     NSString *url = [NSString stringWithFormat:@"https://haokan.baidu.com/haokan/ui-web/video/rec?tab=%@&act=pcFeed&pd=pc&num=%d", self.tab, 5];
     
-    @weakify(self);
+    __weak typeof(self) weakSelf = self; // 手动创建弱引用
     [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         if ([responseObject[@"status"] integerValue] == 0) {
             NSArray *videos = responseObject[@"data"][@"response"][@"videos"];
             
@@ -119,7 +124,7 @@
         }
         !completion ?: completion();
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         [self.manager.scrollView.mj_footer endRefreshing];
         !completion ?: completion();
     }];
@@ -166,9 +171,9 @@
 }
 
 - (void)cellDidClickIcon:(GKDYVideoModel *)model {
-    GKDYUserViewController *userVC = [[GKDYUserViewController alloc] init];
-    userVC.model = model;
-    [self.navigationController pushViewController:userVC animated:YES];
+//    GKDYUserViewController *userVC = [[GKDYUserViewController alloc] init];
+//    userVC.model = model;
+//    [self.navigationController pushViewController:userVC animated:YES];
 }
 
 - (void)cellDidClickComment:(GKDYVideoModel *)model cell:(GKDYVideoPortraitCell *)cell {

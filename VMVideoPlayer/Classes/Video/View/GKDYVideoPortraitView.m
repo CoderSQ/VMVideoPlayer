@@ -9,6 +9,9 @@
 #import "GKDYVideoPortraitView.h"
 #import "GKDYVideoItemButton.h"
 #import "GKDoubleLikeView.h"
+#import <Masonry/Masonry.h>
+#import "PrefixHeader.h"
+
 
 @interface GKDYVideoPortraitView()
 
@@ -277,9 +280,9 @@
     if (!_slider) {
         _slider = [[GKDYVideoSlider alloc] init];
         
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         _slider.slideBlock = ^(BOOL isDragging) {
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             [self sliderDragging:isDragging];
         };
     }
@@ -304,9 +307,9 @@
 - (GKLikeView *)likeView {
     if (!_likeView) {
         _likeView = [[GKLikeView alloc] init];
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         _likeView.likeBlock = ^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             [self likeDidClick];
         };
     }

@@ -8,6 +8,8 @@
 
 #import "GKDYVideoScrollView.h"
 #import "GKDYPanGestureRecognizer.h"
+#import "PrefixHeader.h"
+
 
 @interface GKDYVideoScrollView()<UIGestureRecognizerDelegate, UIScrollViewDelegate>
 

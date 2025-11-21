@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <ZFPlayer/ZFPlayer.h>
 #import <ZFPlayer/ZFAVPlayerManager.h>
+#import <SDWebImage/SDWebImage.h>
 #import "GKDYVideoCell.h"
 #import "GKRotationManager.h"
 #import "GKDYVideoPortraitCell.h"
@@ -53,22 +54,22 @@
     player.allowOrentitaionRotation = NO; // 禁止自动旋转
     self.player = player;
     
-    @weakify(self);
+    __weak typeof(self) weakSelf = self; // 手动创建弱引用
     // 播放结束回调
     player.playerDidToEnd = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         [self.player.currentPlayerManager replay];
     };
     
     // 播放失败回调
     player.playerPlayFailed = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, id  _Nonnull error) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         self.portraitView.playBtn.hidden = NO;
     };
     
     // 加载状态
     player.playerLoadStateChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, ZFPlayerLoadState loadState) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         if ((loadState == ZFPlayerLoadStatePrepare || loadState == ZFPlayerLoadStateStalled) && self.player.currentPlayerManager.isPlaying) {
             [self.portraitView.slider showLoading];
         }else {
@@ -78,13 +79,13 @@
     
     // 播放时间
     player.playerPlayTimeChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSTimeInterval currentTime, NSTimeInterval duration) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         [self.portraitView.slider updateCurrentTime:currentTime totalTime:duration];
     };
     
     // 方向即将改变
     player.orientationWillChange = ^(ZFPlayerController * _Nonnull player, BOOL isFullScreen) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         self.player.controlView.hidden = YES;
         if (player.isFullScreen) {
             [self.landscapeView startTimer];
@@ -95,7 +96,7 @@
     
     // 方向已经改变
     player.orientationDidChanged = ^(ZFPlayerController * _Nonnull player, BOOL isFullScreen) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         if (isFullScreen) {
             self.landscapeView.hidden = NO;
             self.player.controlView = self.landscapeView;
@@ -111,7 +112,7 @@
     
     // 即将旋转时调用
     self.rotationManager.orientationWillChange = ^(BOOL isFullscreen) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         self.player.controlView.hidden = YES;
         if (isFullscreen) {
             [self.landscapeView startTimer];
@@ -131,7 +132,7 @@
     
     // 旋转结束时调用
     self.rotationManager.orientationDidChanged = ^(BOOL isFullscreen) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         if (isFullscreen) {
 //            self.portraitView.hidden = YES;
             self.landscapeView.hidden = NO;
@@ -159,7 +160,7 @@
     };
     
     player.presentationSizeChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, CGSize size) {
-        @strongify(self);
+            __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
         self.videoSize = size;
     };
 }
@@ -265,9 +266,9 @@
             [self.player.currentPlayerManager play];
         }
     }else {
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         [self requestPlayUrlWithModel:model completion:^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             // 播放内容一致，不做处理
             if ([self.player.assetURL.absoluteString isEqualToString:model.play_url]) return;
             
@@ -339,9 +340,9 @@
     }else {
         GKDYVideoLandscapeCell *cell = [scrollView dequeueReusableCellWithIdentifier:@"GKDYVideoLandscapeCell" forIndexPath:indexPath];
         [cell loadData:model];
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         cell.backClickBlock = ^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             [self rotate];
         };
         [cell showTopView];
@@ -452,14 +453,14 @@
     if (!_landscapeView) {
         _landscapeView = [[GKDYVideoLandscapeView alloc] initWithFrame:UIScreen.mainScreen.bounds];
         
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         _landscapeView.likeBlock = ^(GKDYVideoModel * _Nonnull model) {
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             [self likeVideoWithModel:model];
         };
         
         _landscapeView.singleTapBlock = ^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             if (self.landscapeCell.isShowTop) {
                 [self.landscapeCell hideTopView];
                 [self.landscapeView hideContainerView:NO];
@@ -475,14 +476,14 @@
     if (!_fullscreenView) {
         _fullscreenView = [[GKDYVideoFullscreenView alloc] init];
         
-        @weakify(self);
+        __weak typeof(self) weakSelf = self; // 手动创建弱引用
         _fullscreenView.closeFullscreenBlock = ^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             [self.currentCell closeFullscreen];
         };
         
         _fullscreenView.likeBlock = ^{
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             [self likeVideoWithModel:nil];
         };
     }

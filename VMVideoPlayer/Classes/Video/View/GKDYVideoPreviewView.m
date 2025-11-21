@@ -9,6 +9,7 @@
 #import "GKDYVideoPreviewView.h"
 #import "GKDYTools.h"
 #import <ZFPlayer/ZFAVPlayerManager.h>
+#import <Masonry/Masonry.h>
 
 @interface ZFAVPlayerManager (GKCategory)
 
@@ -74,10 +75,10 @@
     
     ZFAVPlayerManager *manager = (ZFAVPlayerManager *)self.player.currentPlayerManager;
     
-    @weakify(self);
+    __weak typeof(self) weakSelf = self; // 手动创建弱引用
     [manager thumbnailImageAtTime:self.player.totalTime * value completion:^(UIImage * _Nullable image) {
         if (image) {
-            @strongify(self);
+                __strong typeof(weakSelf) strongSelf = weakSelf; // 手动转为强引用
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imageView.image = image;
             });

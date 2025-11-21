@@ -7,6 +7,8 @@
 //
 
 #import "GKLikeView.h"
+#import "PrefixHeader.h"
+
 
 @interface GKLikeView()
 

@@ -6,7 +6,6 @@
 //  Copyright © 2018 QuintGao. All rights reserved.
 //
 
-#import "GKDYBaseViewController.h"
 #import "GKDYVideoModel.h"
 #import <JXCategoryView/JXCategoryView.h>
 #import "GKDYVideoScrollView.h"
@@ -33,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface GKDYPlayerViewController : GKDYBaseViewController<JXCategoryListContentViewDelegate>
+@interface GKDYPlayerViewController : UIViewController<JXCategoryListContentViewDelegate>
 
 @property (nonatomic, weak) id<GKDYPlayerViewControllerDelegate> delegate;
 
