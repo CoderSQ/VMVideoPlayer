@@ -16,8 +16,6 @@
 #import "GKDYCommentView.h"
 #import "GKDYHomeViewController.h"
 #import "GKDYSearchViewController.h"
-#import "GKDYShootViewController.h"
-#import "PrefixHeader.h"
 #import "NSMethodSignature+GKCategory.h"
 #import "NSString+GKCategory.h"
 #import "UIButton+GKCategory.h"

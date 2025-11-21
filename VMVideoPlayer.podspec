@@ -38,6 +38,8 @@ Pod::Spec.new do |s|
   # }
 
   s.public_header_files = 'VMVideoPlayer/Classes/**/*.h'
+  s.prefix_header_file = 'VMVideoPlayer/Classes/PrefixHeader.pch'
+
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   # 在 VMVideoPlayer.podspec 中添加

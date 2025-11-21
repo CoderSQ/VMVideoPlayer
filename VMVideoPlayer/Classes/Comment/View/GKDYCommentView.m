@@ -14,7 +14,7 @@
 #import "GKPopupController.h"
 #import "GKDYCommentControlView.h"
 #import <Masonry/Masonry.h>
-#import "PrefixHeader.h"
+//#import "PrefixHeader.h"
 
 @interface GKDYCommentView()<UITableViewDataSource, UITableViewDelegate, GKPopupProtocol>
 

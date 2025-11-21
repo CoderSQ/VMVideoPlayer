@@ -20,6 +20,7 @@
   },
   "source_files": "VMVideoPlayer/Classes/**/*",
   "public_header_files": "VMVideoPlayer/Classes/**/*.h",
+  "prefix_header_file": "VMVideoPlayer/Classes/PrefixHeader.pch",
   "static_framework": true,
   "dependencies": {
     "AFNetworking": [],
